@@ -1,41 +1,34 @@
-const ride = window.prompt("enter the distance in feet")
-const fee = ride.parseInt();
-let city = window.prompt("enter the name of the city");
-let tip = window.prompt("enter the tip")
-function scuberGreetingForFeet(){
-  if(fee <= 400){
-    alert("this is one is on me ");
+function scuberGreetingForFeet(distance){
+  let charge ;
+  switch(true){
+    case distance <= 400:
+      charge = "This one is on me!"
+    break
+    case distance > 2000 && distance < 2500:
+      charge = "I will gladly take your thirty bucks."
+    break
+    case distance > 2500:
+      charge = "No can do."
+    break
   }
-  else if(fee > 2000){
-    alert("I will gladly take your thirty bucks. ")
-  }
-  else if (fee > 2500){
-    alert("no can do")
-  }
-  else{
-    alert("please enter the distance as prompted")
-  }
-
+  return charge
 }
-
-
-function ternaryCheckCity(){
+function ternaryCheckCity(city){
   if(city == "NYC"){
-    alert("Ok, sounds good.");
+    return "Ok, sounds good."
   }
   else{
-    alert("No go")
+    return "No go."
   }
 }
-
-function switchOnCharmFromTip(){
+function  switchOnCharmFromTip(tip){
   if(tip == "generous"){
-    alert("Thank you so much")
+    return "Thank you so much."
   }
-  else if(tip == "not as generous"){
-    alert("Thank you")
+  else if(tip =="not as generous"){
+    return "Thank you."
   }
   else{
-    alert("Bye.")
+    return "Bye."
   }
 }
